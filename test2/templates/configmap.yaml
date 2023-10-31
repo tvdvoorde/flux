@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Name }}-configmap
+  name: {{ .Release.Name }}-configmap2
 data:
   myvalue: "Hello World"
   drink: {{ quote .Values.favorite.drink }}
