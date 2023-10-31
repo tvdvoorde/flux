@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: h3-release
+  name: h3-release-v2
   namespace: default
 spec:
   install:
@@ -20,6 +20,5 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: test
-      # namespace: kube-system
       valuesKey: testdata
-      targetPath: favorite\.name
+      targetPath: fred  

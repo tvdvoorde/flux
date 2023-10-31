@@ -7,3 +7,4 @@ data:
   drink: {{ quote .Values.favorite.drink }}
   food: {{ quote .Values.favorite.food }}
   name: {{ quote .Values.favorite.name }}
+  fred: {{ quote .Values.fred }}
