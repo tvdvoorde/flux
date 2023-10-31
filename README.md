@@ -48,17 +48,16 @@ az extension add --upgrade --name k8s-extension
 
 az k8s-extension update --configuration-settings multiTenancy.enforce=false -c flux1 -g flux1 -n flux -t managedClusters 
   
-#  "configurationSettings": { "multiTenancy.enforce": "false" }
 # https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/conceptual-gitops-flux2#opt-out-of-multi-tenancy
 # https://github.com/Azure/azure-cli/issues/27357
-
-
 
 k apply -f h1.yaml
 
 k create sa flux-applier -n default
 
-kubectl create clusterrolebinding flux-admin --clusterrole=cluster-admin --serviceaccount=default:flux-applier
+kubectl create clusterrolebinding flux-admin-default --clusterrole=cluster-admin --serviceaccount=default:flux-applier
+
+k apply -f h2.yaml
 
 
 
