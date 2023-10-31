@@ -59,6 +59,8 @@ kubectl create clusterrolebinding flux-admin-default --clusterrole=cluster-admin
 
 k apply -f h2.yaml
 
+kubectl create configmap test --from-literal=testdata=testvalue-default -n default
+
 
 
 ```
